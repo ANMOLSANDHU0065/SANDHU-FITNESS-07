@@ -1,0 +1,585 @@
+<!-- ANMOL SINGH SANDHU -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Website</title>
+    <style>
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    text-align: justify;
+    text-align: center;
+}
+header {
+    height: 65px;
+    background-color: #000000;
+    color: #fff;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+header .logo img {
+    width: 105px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px;
+    padding-inline: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+/* ANMOL SINGH SANDHU */
+nav ul li a:hover {
+    color: #f4b41a;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #f4b41a;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #222;
+}
+
+/* Home Section */
+#home {
+    background: url('gym_background.jpg') no-repeat center center/cover;
+    color: rgb(0, 0, 0);
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#home h1 {
+    font-size: 4em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+}
+
+#home p {
+    font-size: 1.2em;
+    max-width: 600px;
+    line-height: 1.5;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+#home button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    font-size: 18px;
+}
+
+/* Section Styling */
+/* ANMOL SINGH SANDHU */
+section h2 {
+    font-size: 3em;
+    margin-bottom: 30px;
+    color: #222;
+}
+
+.about-content, .franchise-content, .personal-training-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1200px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    background-color: #fff;
+    padding: 40px;
+}
+.service-item img{
+    max-width: 350px;
+    border-image-source: -webkit-gradient();
+    border: #222 double;
+}
+.about-image,img{
+    max-width: 400px;
+    max-height: fit-content;
+    border-color: NONE;
+}
+.franchise-image img{
+    max-width: 500px;
+    border-image-source: -webkit-gradient();
+ }
+  .personal-training-image img {
+    max-width: 400px;
+    border-image-source: -webkit-gradient();
+  }
+    .about-content{
+        text-align: justify;
+    }
+.franchise-content{
+    text-align: justify;
+}
+.personal-training-content{
+    text-align: justify;
+}
+/* Membership Plans */
+#membership .plan {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    margin: 20px;
+    display: inline-block;
+    width: 30%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+#membership .plan:hover {
+    transform: translateY(-10px);
+}
+
+/* Gallery */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+/* Reviews */
+.review {
+    background-color: #fff;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    font-style: italic;
+}
+/* Footer */
+footer {
+    background-color: #000000;
+    color: white;
+    padding: 5px;
+    padding-bottom: 4PX;
+    border: #fff double;
+    text-align: center;
+}
+
+footer .footer-logo img {
+    width: 105px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+footer .social-icons img {
+    width: 35px;
+    margin: 0 10px;
+}
+
+/* Popup Styles */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: whitesmoke;
+    padding: 10px;
+    border-radius: 10px;
+    border: #000000 double;
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+}
+
+.popup-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+.popup-content form label {
+    margin: 10px 0 5px;
+}
+
+.popup-content form input {
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: black;
+    cursor: pointer;
+}
+/* ANMOL SINGH SANDHU */
+@media (max-width: 768px) {
+    .about-content, .franchise-content, .personal-training-content {
+        flex-direction: column;
+    }
+    #membership .plan {
+        width: 100%;
+    }
+}
+/* Responsive styles */
+@media (min-width: 600px) {
+    header nav {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 768px) {
+    main {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    section {
+        flex: 1 1 calc(50% - 2rem);
+    }
+}
+
+@media (min-width: 1024px) {
+    header, footer {
+        padding: 2rem;
+    }
+
+    main {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+img {
+    border: none !important;
+    outline: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+    </style>
+</head>
+<body>
+
+    <!-- Header with Logo -->
+    <header>
+        <div class="logo">
+            <img src="GANGSTER.jpeg" alt="Gym Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#services">SERVICES</a></li>
+                <li><a href="#about">ABOUT US</a></li>
+                <li><a href="#franchise">FRANCHISE</a></li>
+                <li><a href="#membership">MEMBERSHIP PLAN</a></li>
+                <li><a href="#gallery">GALLERY</a></li>
+                <li><a href="#reviews">REVIEWS</a></li>
+                <li><a href="#contact">CONTACT US</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home">
+        <h1>SANDHU FITNESS</h1>
+        <p>Since 2020, no gym has been responsible for more life-changing transformations and fitness achievements than <b>SANDHU FITNESS</b>..</p>
+        <button id="registerBtn">REGISTER NOW</button>
+    </section>
+<br>
+    <!-- Services Section -->
+    <section id="services">
+        <BR>
+            <BR>
+                <BR>
+                <h2>OUR SERVICES</h2>
+                <div class="service-item">
+                    <section id="services">
+                        <div class="services">
+                            <img src="pexels-panther-1547248.jpg"Gym Image 1">
+                            <img src="pexels-leonardho-1552242.jpg" alt="Gym Image 7">
+                            <img src="pexels-victorfreitas-703014.jpg" alt="Gym Image 6">
+                            <img src="pexels-olly-903171.jpg" alt="Gym Image 5">
+                            <img src="pexels-heyho-7031705.jpg" alt="Gym Image 5">
+                            <img src="pexels-karolina-grabowska-4397841.jpg"Gym Image 5">
+                            <img src="pexels-leonardho-1552242.jpg" alt="Gym Image 5">
+                            <img src="pexels-olly-903171.jpg" alt="Gym Image 5">
+
+                            <br>
+                  <section id="about">
+                    <BR>
+                        <BR>
+                            <BR>
+                                <BR>
+                    <h2>ABOUT US</h2>
+                     <div class="about-content">
+                      <div class="about-text">
+                <P><B>SANDHU FITNESS</B> Has Been The Authority In Fitness Since 2020 Dating Back To The Original <B>SANDHU FITNESS</B> BHILAI, CHHATTISGARH IN. It Was The Place For Serious Fitness. Opened Long Before The Modern-Day Health Club Existed, The Original <B>SANDHU FITNESS</B> Featured Homemade Equipment And A Dedication To Getting Results. It Was An Instant Hit. <B>SANDHU FITNESS</B> Quickly Became Known As “The Mecca Of Bodybuilding".</P>
+                <p>We are dedicated to providing the best gym experience for all fitness levels. Join our family and transform your body!</p>
+            <p><B>SANDHU FITNESS</B> Has Become The Preferred Gym Of Celebrities, Athletes, Bodybuilders, The Military, And Fitness Enthusiasts All Over The INDIA. Most Importantly, <b>SANDHU FITNESS</b> Continues To Change Lives By Helping People Achieve Their Individual Potential.</p>
+            </div>
+            <div class="about-image">
+                <img src="BUILDERS 1.avif" alt="About Us">
+            </div>
+        </div>
+    </section>
+    <section id="franchise">
+        <BR>
+            <BR>
+                <BR>
+        <h2>OUR FRANCHISE</h2>
+        <div class="franchise-content">
+            <div class="franchise-text">
+                <P><B>SANDHU FITNESS</B> has become the largest co-ed gym chain in the world with over 4+ clubs in 1 countries, across 2 continents serving more than 1 LAKH customers. <b>SANDHU FITNESS</b> India started in the year 2020 in Bhilai city. The Year 2024 marked the 4th Anniversary of the <b>SANDHU FITNESS</b> India. 4+ active <B>SANDHU FITNESS</B> clubs in India and a few more under construction. Multiple gym formats Regular, Express and Activ fitness centres. Presence in 4+ cities and 3+ states. 2+ years of presence in the health and fitness industry, <B>SANDHU FITNESS</B> is a best franchises to own. 
+                    <B>SANDHU FITNESS</B> has been leading the fitness movement and redefining strength since 2020 when <B>ANMOL SANDHU</B>opened the original SANDHU FITNESS in BHILAI, CHHATTISGARH. Long before the modern-day health club existed, the original <b>SANDHU FITNESS</b> featured three simple ingredients: The best equipment, a passion for fitness and an unparalleled dedication to results. It was an instant hit.</P>
+                    <p><b>Branch 1:</b> NEHRU NAGAR, BHILAI.</p>
+                    <p><b>Branch 2:</b> SMRITI NAGAR, BHILAI.</p>
+                    <p><b>Branch 3:</b> VIP ROAD, RAIPUR.</p>
+                    <p><b>Branch 4:</b> GURUGRAM, DELHI.</p>
+                </div>
+            <div class="franchise-image">
+                <img src="BUILDER.jpg" alt="Franchise">
+            </div>
+        </div>
+    </section>
+
+    <!-- Membership Plans Section -->
+    <section id="membership">
+        <BR>
+            <BR>
+                <BR>
+                    <BR>
+                        <BR>
+        <h2>MEMBERSHIP PLAN</h2>
+        <div class="plan">
+            <h3>MONTHLY PLAN</h3>
+            <p>₹3,500/MONTH</p>
+        </div>
+        <div class="plan">
+            <h3>YEARLY PLAN</h3>
+            <p>₹25,000/YEAR</p>
+        </div>
+        <div class="plan">
+            <h3>LIFETIME PLAN</h3>
+            <p>₹1,00,000/LIFETIME</p>
+        </div>
+    </section>
+
+    <!-- Personal Training Section with Side-by-Side Image and Paragraph -->
+    <section id="personal-training">
+        <BR>
+            <BR>
+                <BR>
+        <h2>PERSONAL TRAINING</h2>
+        <div class="personal-training-content">
+            <div class="personal-training-image">
+                <img src="BODY.webp" alt="Personal Training">
+            </div>
+            <div class="personal-training-text">
+                <P>SANDHU FITNESS India is known for the competent personal trainers and extraordinary personal training offered by them. The individuals seeking for serious goal-oriented fitness, personalized guidance, motivation, and specialized workout plans, SANDHU FITNESS India personal training program is for them.</P>
+                <p>Our personal training program offers personalized, one-on-one workout plans, customized nutrition plans, and ongoing support to help you reach your fitness goals. Our trainers are certified professionals who will guide you through each step of your journey, providing motivation, accountability, and expert advice. Whether you’re looking to lose weight, build muscle, or just improve your overall health, we’re here to help. Start your transformation today with a free consultation!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <BR>
+                <BR>
+        <h2>GALLERY</h2>
+        <div class="gallery">
+            <img src="gallery 10.webp" alt="Gym Image 1">
+            <img src="gallery 17.webp" alt="Gym Image 2">
+            <img src="gallery 14.webp" alt="Gym Image 3">
+            <img src="gallery 4.webp" alt="Gym Image 4">
+            <img src="gallery 12.webp" alt="Gym Images 5">
+            <img src="gallery 16.webp" alt="Gym Images 7">
+            <img src="gallery 7.webp" alt="Gym Images 8">
+            <img src="gallery 8.webp" alt="Gym Images 9">
+            <img src="gallery 3.webp" alt="Gym Images 10">
+            <img src="gallery 11.webp" alt="Gym Images 11">
+            <img src="gallery 6.webp" alt="Gym Images 12">
+            <img src="galler 5.webp" alt="Gym Images 13">
+            <img src="gallery 1.webp" alt="Gym Images 14">
+            <img src="gallery 13.webp" alt="Gym Images 15">
+            <img src="gallery.webp" alt="Gym Images 16">
+    </section>
+    <!-- ASS -->
+     <!-- GYM VIDEOS -->
+    <section class="portfolio" id="portfolio">
+        <div class="container aos-init aos-animate" data-aos="fade-up">
+            <div class="section-title">
+                <h2>GYM VIDEOS</h2>
+            </div>
+            <div class="col-lg-12 d-flex justify-content-center portfolio-item">
+                <iframe width="500PX" height="420PX" src="https://www.youtube.com/embed/SIIsgcLGb3w" 
+                title="Gym CINEMATIC FITNESS Video [Sony a7IV with 50mm f1.2 GM] 4k"
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen></iframe>
+                <iframe width="500" height="420" src="https://www.youtube.com/embed/UUwmlaDT-hM" 
+                title="Cinematic Fitness Video (Featuring DVTraining)" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen></iframe>
+                <iframe width="500" height="420" src="https://www.youtube.com/embed/W7NFoCfXAXU" 
+                title="Sony A7S III X Fitness Commercial" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen></iframe>
+            </div>
+            <div class="d-flex justify-content-center"></div>
+            </div>
+        </div>
+        <!-- VIDEOS -->
+    </section>
+    <!-- Reviews Section -->
+    <section id="reviews">
+        <BR>
+            <BR>
+                <BR>
+        <h2>REVIEWS</h2>
+        <div class="review">
+        The Best Gym in CHHATTISHGARH. If you are looking for a gym that offers a variety of fitness services, professional trainers, and state-of-the-art equipment, then SANDHU FITNESS is the place for you. SANDHU FITNESS is a fitness center for men and women in BHIALI, CHHATTISGARH that has been providing quality fitness solutions since 2020. In this blog, we will share some of the SANDHU FITNESS reviews from their satisfied customers and explain why you should join the best gym in BHIALI.
+        </div>
+        <div class="review">
+            <b>Why You Should Join SANDHU FITNESS:</b>
+<P>SANDHU FITNESS is not just a gym, it is a fitness community that cares about your health and happiness. When you join SANDHU FITNESS, you get:</P>
+<P>Access to a wide range of fitness services and facilities that suit your needs and goals. Guidance and support from certified and experienced trainers who will help you achieve your fitness potential. A friendly and motivating environment that will make you feel welcome and comfortable. Affordable and flexible membership plans that fit your budget and schedule. A chance to be a part of the SANDHU FITNESS family and enjoy their events and activities. If you are ready to take your fitness to the next level, join SANDHU FITNESS today and see the difference for yourself. You can visit our website to learn more about their services, trainers, and offers. You can also contact us or visit their center at BHIALI, CHHATTISGARH, 490026.</P>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact">
+        <BR>
+        <h2>CONTACT US</h2>
+        SANDHU FITNESS Near Me Address
+        BHILAI, CHHATTISHGARH
+        <p>CONTACT NO:- 6263171727, 8827590965</p>
+        <P>E-MAIL ID:- sandhufitness07@gmail.com</P>
+    </section>
+
+    <!-- Footer with Logo and Social Links -->
+    <footer>
+        <div class="footer-logo">
+            <img src="GANGSTER.jpeg" alt="Gym Logo">
+        </div>
+        <!-- footer paragraph -->
+        <p>At SANDHU FITNESS, we make group workouts fun, daily food healthy & tasty, mental fitness easy with yoga & meditation, Medical & lifestyle care hassle-free.<b>#BeBetterEveryDay.</b></p>
+        <P>© 2024 SANDHU FITNESS. All rights reserved.</P>
+        <P>FOLLOW US ON SOCIAL MEDIA!</P>
+        <div class="social-icons">
+            <!-- instagram -->
+            <a href="https://instagram.com/sandhu_____07__"></a>
+            <svg width="21" height="20" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10.0012 15.0147C10.0012 12.2507 12.2392 10.0094 15.0006 10.0094C17.762 10.0094 20.0012 12.2507 20.0012 15.0147C20.0012 17.7788 17.762 20.0201 15.0006 20.0201C12.2392 20.0201 10.0012 17.7788 10.0012 15.0147ZM7.29795 15.0147C7.29795 19.273 10.7464 22.7246 15.0006 22.7246C19.2548 22.7246 22.7033 19.273 22.7033 15.0147C22.7033 10.7565 19.2548 7.30483 15.0006 7.30483C10.7464 7.30483 7.29795 10.7565 7.29795 15.0147ZM21.208 6.9992C21.208 7.99371 22.0138 8.80145 23.0086 8.80145C24.0022 8.80145 24.8092 7.99371 24.8092 6.9992C24.8092 6.00468 24.0034 5.19816 23.0086 5.19816C22.0138 5.19816 21.208 6.00468 21.208 6.9992ZM8.93978 27.2363C7.47728 27.1696 6.68242 26.9259 6.15413 26.7197C5.45377 26.4468 4.95456 26.1218 4.42869 25.5966C3.90404 25.0715 3.57809 24.5718 3.30668 23.8708C3.10069 23.342 2.85714 22.5464 2.7905 21.0825C2.7178 19.4998 2.70326 19.0243 2.70326 15.0147C2.70326 11.0051 2.71901 10.5309 2.7905 8.94699C2.85714 7.48311 3.1019 6.68871 3.30668 6.15871C3.5793 5.4577 3.90404 4.95802 4.42869 4.43165C4.95335 3.9065 5.45256 3.58025 6.15413 3.30858C6.68242 3.1024 7.47728 2.85862 8.93978 2.79192C10.521 2.71915 10.996 2.70459 15.0006 2.70459C19.0064 2.70459 19.4802 2.72036 21.0626 2.79192C22.5251 2.85862 23.3188 3.10361 23.8483 3.30858C24.5486 3.58025 25.0479 3.9065 25.5737 4.43165C26.0984 4.9568 26.4231 5.4577 26.6957 6.15871C26.9017 6.6875 27.1453 7.48311 27.2119 8.94699C27.2846 10.5309 27.2992 11.0051 27.2992 15.0147C27.2992 19.0231 27.2846 19.4985 27.2119 21.0825C27.1453 22.5464 26.9005 23.342 26.6957 23.8708C26.4231 24.5718 26.0984 25.0715 25.5737 25.5966C25.0491 26.1218 24.5486 26.4468 23.8483 26.7197C23.32 26.9259 22.5251 27.1696 21.0626 27.2363C19.4814 27.3091 19.0064 27.3237 15.0006 27.3237C10.996 27.3237 10.521 27.3091 8.93978 27.2363ZM8.81619 0.0909617C7.21919 0.163731 6.12868 0.417211 5.17509 0.788334C4.18878 1.17159 3.35272 1.68582 2.51787 2.52024C1.68424 3.35467 1.17048 4.19151 0.787592 5.17996C0.416818 6.13445 0.163577 7.22599 0.0908761 8.82449C0.0169635 10.4254 0 10.9372 0 15.0147C0 19.0922 0.0169635 19.6041 0.0908761 21.205C0.163577 22.8035 0.416818 23.895 0.787592 24.8495C1.17048 25.8368 1.68302 26.6748 2.51787 27.5092C3.35151 28.3437 4.18757 28.8567 5.17509 29.2411C6.12989 29.6123 7.21919 29.8657 8.81619 29.9385C10.4168 30.0113 10.9269 30.0295 15.0006 30.0295C19.0755 30.0295 19.5856 30.0125 21.185 29.9385C22.782 29.8657 23.8725 29.6123 24.8261 29.2411C25.8124 28.8567 26.6485 28.3437 27.4833 27.5092C28.317 26.6748 28.8295 25.8368 29.2136 24.8495C29.5844 23.895 29.8388 22.8035 29.9103 21.205C29.983 19.6028 30 19.0922 30 15.0147C30 10.9372 29.983 10.4254 29.9103 8.82449C29.8376 7.22599 29.5844 6.13445 29.2136 5.17996C28.8295 4.19273 28.317 3.35588 27.4833 2.52024C26.6497 1.68582 25.8124 1.17159 24.8273 0.788334C23.8725 0.417211 22.782 0.162518 21.1862 0.0909617C19.5868 0.0181923 19.0755 0 15.0018 0C10.9269 0 10.4168 0.0169795 8.81619 0.0909617Z" fill="white"/>
+            </svg>
+                <!-- facebook -->
+                <a href="https://facebook.com/           "></a>
+            <svg width="21" height="20" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M24.375 0H5.625C2.51842 0 0 2.5209 0 5.63053V24.399C0 27.5086 2.51842 30.0295 5.625 30.0295H24.375C27.4816 30.0295 30 27.5086 30 24.399V5.63053C30 2.5209 27.4816 0 24.375 0ZM23.6132 16.1725H20.8066V26.5721H16.1171V16.1725H14.2974V12.6677H16.1171V10.4352C16.1171 7.51132 17.3329 5.77277 20.775 5.77277H24.2645V9.26172H22.2355C20.8934 9.26172 20.8066 9.76353 20.8066 10.696L20.8026 12.6637H23.9921L23.6092 16.1685L23.6132 16.1725Z" fill="white"/>
+            </svg>
+                    <!-- youtube -->
+                <svg width="21" height="20" viewBox="0 0 30 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.4246 19.9752C6.71127 19.8754 4.75987 19.7855 3.56043 19.551C2.74892 19.3951 2.04373 19.049 1.52666 18.5471C1.12703 18.1673 0.809217 17.5877 0.562649 16.7836C0.351145 16.1136 0.26877 15.5562 0.15133 14.1947C-0.0284475 11.1219 -0.0713047 8.60971 0.15133 5.80268C0.335004 4.25255 0.424058 2.41237 1.6441 1.3388C2.22017 0.836351 2.8903 0.513012 3.6428 0.379343C4.81832 0.167482 9.82649 0 15.0111 0C20.184 0 25.2033 0.167482 26.38 0.379343C27.32 0.546825 28.2017 1.04874 28.7193 1.69595C29.8325 3.35808 29.8519 5.42492 29.9649 7.04162C30.0117 7.81193 30.0117 12.186 29.9649 12.9563C29.7891 15.5113 29.6477 16.4153 29.248 17.3526C29.0009 17.9443 28.79 18.2565 28.4249 18.6026C27.8522 19.1351 27.1222 19.4894 26.3321 19.6181C21.3879 19.971 17.1896 20.0476 12.4246 19.9752V19.9752ZM19.9959 9.70865C17.2452 8.31332 14.6115 7.01943 11.9193 5.68011V13.6928C14.7523 12.2309 17.7389 10.8916 20.0076 9.69755L19.9959 9.70865Z" fill="white"/>
+                </svg>
+                        <!-- linkedin -->
+                <svg width="22" height="20" viewBox="0 0 22 20" fill="white" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M1.72608 0C0.85868 0 0.155029 0.641875 0.155029 1.43266V18.5678C0.155029 19.3587 0.858764 20 1.72608 20H19.8413C20.709 20 21.4124 19.3586 21.4124 18.5676V1.43266C21.4124 0.641875 20.709 0 19.8413 0H1.72608ZM6.61492 7.73305V16.7371H3.43396V7.73305H6.61492ZM6.82458 4.94844C6.82458 5.8125 6.13414 6.50391 5.0251 6.50391L5.02485 6.50383H5.00426C3.93666 6.50383 3.24646 5.81242 3.24646 4.94836C3.24646 4.06469 3.9575 3.39258 5.04619 3.39258C6.13414 3.39258 6.80383 4.06469 6.82458 4.94844ZM11.5563 16.7371H8.37562L8.37554 16.7374C8.37554 16.7374 8.41731 8.57805 8.37579 7.73336H11.5566V9.00785C11.9794 8.39445 12.7362 7.52195 14.4234 7.52195C16.5162 7.52195 18.0852 8.80891 18.0852 11.5745V16.7371H14.9046V11.9207C14.9046 10.7102 14.444 9.88453 13.2933 9.88453C12.4144 9.88453 11.891 10.4413 11.6611 10.9792C11.5771 11.1712 11.5563 11.4406 11.5563 11.7094V16.7371Z" fill="white"/>
+                </svg>
+        </div>
+    </footer>
+
+    <!-- Popup for Register -->
+    <div id="registerPopup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn">&times;</span>
+            <h2>Leave Us Your Info</h2>
+            <form>
+                <label for="name"> FULL NAME</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">E-MAIL ADDRESS</label>
+                <input type="email" id="email" name="email" required>
+                <label for="phone">PHONE NUMBER</label>
+                <input type="tel" id="phone" name="phone" required>
+                <label for="OTP">Send us a message! What can we help you with to get started achieving your goals? Leave us a note below!</label>
+                <input type="text" id="NAME AND number" name="name and number" required>
+                <label for="OTP">OTP</label>
+                <input type="tel" id="number" name="number" required>
+                <button type="submit">SUBMIT NOW</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        // Show Register Popup
+const registerBtn = document.getElementById('registerBtn');
+const popup = document.getElementById('registerPopup');
+const closeBtn = document.querySelector('.close-btn');
+
+registerBtn.addEventListener('click', function() {
+    popup.style.display = 'flex';
+});
+
+closeBtn.addEventListener('click', function() {
+    popup.style.display = 'none';
+});
+
+window.addEventListener('click', function(e) {
+    if (e.target == popup) {
+        popup.style.display = 'none';
+    }
+});
+
+// Smooth Scrolling
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+    </script>
+</body>
+</html>
+<!-- ANMOL SINGH SANDHU -->
